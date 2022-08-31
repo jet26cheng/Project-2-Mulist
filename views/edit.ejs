@@ -1,0 +1,33 @@
+<%- include("./partials/header.ejs") %>
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+<h1> Edit Songs </h1>
+
+<form action="/music/<%=song.id%>?_method=PUT" method="POST">
+    <label for="SongTitle"> Song Title:</label>
+       SongTitle: <input type="text" name="SongTitle" value="<%=song.SongTitle %>" />
+       
+       Artist:  <input type="text" name="Artist"  value="<%=song.Artist %>"/>
+        
+       Year:  <input type="text" name="Year"  value="<%=song.Year %>"/>
+        
+       Album:  <input type="text" name="Album"  value="<%=song.Album %>"/>
+        
+       Finished:  <input type="checkbox" name="Finished"  
+            <% if(song.Finished === true) { %> 
+            checked
+            <% } %> 
+        />
+        <input type="submit" value="Edit Song" value="Submit Changes"/>
+</form>
+
+
+
+<%- include("./partials/footer.ejs") %> 

@@ -1,0 +1,43 @@
+<%- include("./partials/header.ejs") %>
+   
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<h1> Song Show Page</h1>
+
+<div id="main"> 
+
+</div>
+   
+
+
+    <!-- <a href="/music"> Back to Music</a> -->
+    
+    
+    
+    
+    
+      <p>Song: <%= Song.SongTitle %></p>
+      <p>Artist <%= Song.Artist %></p>
+      <p>Year <%= Song.Year %></p>
+      <p>Album: <%= Song.Album %></p>
+
+      <% if (Song.SongTitle === "All I Got") { %>
+        <a id="link" href="https://soundcloud.com/said-the-sky/alligot"></a>
+     <% } %>
+   
+        <% if (Song.Finished === true) { %>
+        <span> The Song is Finished</span>
+        <% } else { %> 
+        <span> The Song is not Finished </span> 
+        <% } %>
+    
+
+        <a href="/music/<%=Song.id%>/edit">
+            <button>EDIT</button>
+          </a>
+
+
+    <%- include("./partials/footer.ejs") %>  

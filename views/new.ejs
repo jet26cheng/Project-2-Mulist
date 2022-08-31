@@ -1,0 +1,19 @@
+<%- include("./partials/header.ejs") %>
+
+<link rel="stylesheet" href="/css/style.css">
+
+    <h1>Add New Song</h1>
+    <form action="/music" method="POST" >
+        <label for="SongTitle"> Song Title:</label>
+        <input type="text" name="SongTitle" id="SongTitle"/>
+        <label for="Artist">Artist:</label>
+        <input type="text" name="Artist" id="Artist"/>
+        <label for="Year"> Year:</label>
+        <input type="text" name="Year" id="Year"/>
+        <label for="Album"> Album:</label>
+        <input type="text" name="Album" id="Album"/>
+        <label for="Finished"> Song is Finished </label>
+        <input type="checkbox" name="Finished" id="finished" />
+        <input type="submit" value="Make Song" />
+    </form>
+    <%- include("./partials/footer.ejs") %> 

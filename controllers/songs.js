@@ -10,6 +10,9 @@ const router = express.Router()
 
 const Song = require("../models/songs.js")
 
+
+const methodOverride = require('method-override');
+
 //Index
 router.get("/", (req, res) => {
     // console.log("before")
@@ -94,7 +97,7 @@ router.post("/", (req, res) => {
       req.body.Finished = false;
     }
    
-    Song.create(req.body, (error, createdSong) => {
+    Song.create(req.body, (err, createdSong) => {
       if(error) {
         console.log("error", error)
         res.send(error)
@@ -103,13 +106,13 @@ router.post("/", (req, res) => {
       }
     })
   
-    // res.redirect("/music")
+    res.redirect("/music")
   });
 
 
   //Show
 router.get("/:id", (req,res) => {
-    Song.findById(req.params.id, (error, song) => {
+    Song.findById(req.params.id, (err, song) => {
       res.render("show.ejs", {
         Song: song,
       })
@@ -119,13 +122,14 @@ router.get("/:id", (req,res) => {
 
     // //Destroy
 router.delete("/:id", (req,res) => {
-    Song.findByIdAndRemove(req.params.id, (err, data) => {
-      if (err) {
-        console.log("error");
-      } else {
-        res.redirect('/music')
-      }
-    })
+    res.send("deleting Item")
+    // Song.findByIdAndRemove(req.params.id, (err, deleteSong) => {
+    //   if (err) {
+    //     console.log("error", error);
+    //   } else {
+    //     res.redirect('/music');
+    //   }
+    // })
     
   })
 

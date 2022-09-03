@@ -96,17 +96,16 @@ router.post("/", (req, res) => {
     } else {
       req.body.Finished = false;
     }
-   
+  
     Song.create(req.body, (err, createdSong) => {
       if(error) {
         console.log("error", error)
         res.send(error)
       } else {
-        res.redirect("/music")
+        res.redirect("/music");
       }
-    })
+    });
   
-    res.redirect("/music")
   });
 
 

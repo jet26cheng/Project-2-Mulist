@@ -97,7 +97,7 @@ router.post("/", (req, res) => {
       req.body.Finished = false;
     }
   
-    Song.create(req.body, (err, createdSong) => {
+    Song.create(req.body, (error, createdSong) => {
       if(error) {
         console.log("error", error)
         res.send(error)

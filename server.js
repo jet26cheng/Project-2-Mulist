@@ -23,7 +23,7 @@ const methodOverride = require('method-override');
 const { render } = require('ejs');
 
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5001
 
 const songController = require("./controllers/songs.js");
 
@@ -55,7 +55,7 @@ app.use('/music', songController)
 // })
 
 // const songs = require("./models/songs.js")
-const port = 3000
+
 
 // app.use(methodOverride('_method'))
 
@@ -205,9 +205,7 @@ app.use((req, res, next) => {
 //   res.redirect("/music")
 //   })
 
-app.listen(PORT, () => {
-  
-})
+
 
 app.use("/music", songController);
 

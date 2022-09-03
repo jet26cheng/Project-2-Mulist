@@ -79,12 +79,14 @@ body {
 main {
     display: flex;
     justify-content: center;
+    
 }
 
 #mainbox {
     width: 50%;
     height: 1500px;
     background-color: white;
+    
 }
 
 #songdivbox {

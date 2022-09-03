@@ -11,7 +11,7 @@ const router = express.Router()
 const Song = require("../models/songs.js")
 
 
-const methodOverride = require('method-override');
+
 
 //Index
 router.get("/", (req, res) => {
@@ -121,15 +121,15 @@ router.get("/:id", (req,res) => {
 
 
     // //Destroy
-router.delete("/:id", (req,res) => {
-    res.send("deleting Item")
-    // Song.findByIdAndRemove(req.params.id, (err, deleteSong) => {
-    //   if (err) {
-    //     console.log("error", error);
-    //   } else {
-    //     res.redirect('/music');
-    //   }
-    // })
+router.delete("/:id", (req, res) => {
+// res.send("deleting item")
+    Song.findByIdAndDelete(req.params.id, (err, deleteSong)=> {
+      if (err) {
+        console.log("error", error);
+      } else {
+        res.redirect('/music');
+      }
+    })
     
   })
 

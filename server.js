@@ -45,9 +45,9 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended:true}));
 
-app.use(methodOverride("_method"))
-
 app.use('/music', songController)
+
+app.use(methodOverride("_method"))
 
 // app.use((req, res, next) => {
 //   console.log("req", req.path, req.params, req.query,req.method, req.originalMethod)

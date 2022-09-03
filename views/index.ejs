@@ -1,7 +1,9 @@
-<%- include("./partials/header.ejs") %>
+
+
+
+<%- include("./partials/header.ejs") -%>
     
 
-<div id="main">
     <!-- <a href="/music">List of Songs (index)</a> |
     <a href="/music/new"> Make a new Song</a> -->
 
@@ -19,13 +21,12 @@
             
             
             <li>
-                <a href="/music/<%= Song[i].id%>">
+                <a href="/music/<%=Song[i].id%>">
                     <%= Song[i].SongTitle %>
                 </a>
             
 
-                <form action="/music/<%=Song[i].id%>?
-                    _method=DELETE" method="POST">
+                <form action="/music/<%=Song[i].id%>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE" />  
                 </form>
         
@@ -37,6 +38,10 @@
       <%  } %>
     </ul>
     
+
+
+    </div>
+    </div>
 </div>
     
 <%- include("./partials/footer.ejs") %>   
